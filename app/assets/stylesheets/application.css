@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: black;
+   
+}
+
+header {
+    background-color: #bdd6e9;
+    outline: 1px solid black;
+    background-image: url("Maple_230130_013528.jpeg");
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height:250px;
+    margin-left: 130px;
+    margin-right: 170px;
+    margin-bottom: 40px;
+    
+}
+
+main {
+    outline: 1px solid black;
+    border-radius: 15px;
+    background-color: rgb(247, 145, 167);
+    flex: 1;
+    z-index: 1;
+    
+}
+
+nav {
+    width: 150px;
+}
+
+aside {
+    width: 200px;
+}
+
+footer {
+    outline: 1px solid black;
+    background-color: #bdd6e9;
+    background-repeat:no-repeat;
+    background-image: url("moonchair2.jpeg");
+    height: 100px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-left: 150px;
+    margin-right: 200px;
+    margin-top: 50px;
+}
+
+.center{
+    display: flex;
+    flex: 1;
+}
+
+.header-logo{
+    font-size: 36px;
+    padding:50px 40px 20px 60px;
+    float: left;
+}
+
+.header-list li{
+    list-style: none;
+    padding:190px 70px 33px 20px;
+    float: right;
+}
+
+.state-input{
+    border-radius: 10px;
+    height: 30px;
+    font-size: 15px;
+    width: 200px;
+    margin-left: 20px;
+}
+
+.exchange p{
+    padding-left: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.main-state{
+    border: solid 1px;
+    padding-bottom: 20px;
+    width:400px;
+    border-color: black;
+    border-radius: 10px;
+    margin-bottom: 70px;
+}
+
+.bigframe{
+    border: solid #bdd6e9 1px;
+    padding-left:30px;
+    margin:20px;
+    background-color: #bdd6e9;
+    margin:15px;
+}
+
+.title{
+    font-weight: bold;
+    border: solid black 1px;
+    padding-bottom:20px;
+    margin-right:40px;
+    border-radius: 10px;
+    padding-top:20px;
+    padding-left:30px;
+    color:black;
+    background-color: rgb(247, 145, 167);
+}
+
+.symbol{
+    border: solid 1px;
+    padding-bottom: 20px;
+    width:400px;
+    border-color: black;
+    border-radius: 10px;
+    margin-bottom: 70px;
+}
+
+.other-mainstate{
+    border: solid 1px;
+    padding-bottom: 20px;
+    width:400px;
+    border-color: black;
+    border-radius: 10px;
+    margin-bottom: 70px;
+}
+
+.status{
+    border: solid 1px;
+    padding-bottom: 20px;
+    width:400px;
+    border-color: black;
+    border-radius: 10px;
+    margin-bottom: 70px;
+}
+
+.wepon{
+    border: solid 1px;
+    padding-bottom: 20px;
+    width:400px;
+    border-color: black;
+    border-radius: 10px;
+    margin-bottom: 70px;
+}
+
+.subwepon{
+    border: solid 1px;
+    padding-bottom: 20px;
+    width:400px;
+    border-color: black;
+    border-radius: 10px;
+    margin-bottom: 70px;
+}
+
+.emb{
+    border: solid 1px;
+    padding-bottom: 20px;
+    width:400px;
+    border-color: black;
+    border-radius: 10px;
+    margin-bottom: 70px;
+}
+
+.fb{
+    border: solid 1px;
+    padding-bottom: 20px;
+    width:400px;
+    border-color: black;
+    border-radius: 10px;
+    margin-bottom: 70px;
+}
+
+.union-sub{
+    border: solid 1px;
+    padding-bottom: 20px;
+    width:400px;
+    border-color: black;
+    border-radius: 10px;
+    
+
+}
+
+.submit{
+    border-radius: 10px;
+    width: 100px;
+    height:35px;
+    margin-top:50px;
+    margin-bottom:50px;
+    margin-left:400px;
+    font-size:20px;
+    background-color: rgb(247, 145, 167);
+    font-weight: bold;
+}
+
+.output{
+    font-weight: bold;
+    border: solid black 1px;
+    padding-bottom:20px;
+    margin-right:40px;
+    border-radius: 10px;
+    padding-top:20px;
+    padding-left:30px;
+    color:black;
+    background-color: rgb(247, 145, 167);
+    margin-bottom:50px;
+}
+
+table{
+    width: 990px;
+    border-collapse: collapse;
+    margin-bottom:50px;
+    
+  }
+  
+  table tr{
+    border-bottom: solid 2px white;
+  }
+  
+  table tr:last-child{
+    border-bottom: none;
+  }
+  
+  table th{
+    position: relative;
+    text-align: left;
+    width: 30%;
+    background-color: #52c2d0;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  table th:after{
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top:calc(50% - 10px);
+    right:-10px;
+    border-left: 10px solid #52c2d0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+  
+  table td{
+    text-align: left;
+    width: 40%;
+    text-align: center;
+    background-color: #eee;
+    padding: 10px 0;
+  }

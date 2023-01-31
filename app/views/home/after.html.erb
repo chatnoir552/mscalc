@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
+  <link rel="stylesheet" href="application.css">
+  <title>Maplestory Calc</title>
+</head>
+
+<body>
+  <header>
+     <div class= "header-logo">メイプル</div>
+     <div class="header-list">
+        <ul>
+          <li>項目4</li>
+          <li>項目3</li>
+          <li>項目2</li>
+          <li>項目1</li>
+        </ul>
+     </div>
+  </header>
+
+  <div class= "center">
+     <nav></nav>
+     <main>
+      <div class="bigframe">
+       <p class="title">ステータス換算機(入力)</p>
+       <p>以下の空白に値を入れてね(魔職はMAの方を記入してね)</p>
+       <%= form_tag("/exchange") do %>
+        <div class= "exchange">
+
+            <div class= main-state>
+              <p>メイプルヒーロー無しのメインステータス</p>
+              <input  class = "state-input" name="main" value="<%= @status.main %>">
+              <p>メイプルヒーロー有りのメインステータス</p>
+              <input class = "state-input" name="mh_main" value="<%= @status.mh_main %>">
+              <p>補正前(AP振った部分)のメインステータス</p>
+              <input class = "state-input" name="ap_main" value="<%= @status.ap_main %>">
+            </div>
+
+            <div class= "symbol">
+              <p>アーケインシンボルでの増加メインステ</p>
+              <input class = "state-input" name="arc_main" value="<%= @status.arc_main %>">
+              <p>オーセンティックシンボルでの増加メインステ</p>
+              <input class = "state-input" name="aut_main" value="<%= @status.aut_main %>">
+            </div>
+
+            <div class="other-mainstate">
+              <p>ハイパーステータスでの増加メインステ</p>
+              <input class = "state-input" name="hyper_main" value="<%= @status.hyper_main %>">
+              <p>インナーアビリティでの増加メインステ</p>
+              <input class = "state-input" name="inner_main" value="<%= @status.inner_main %>">
+              <p>ユニオンキャラ効果の補正値（キャラ自体のメインステ増加値</p>
+              <input class = "state-input" name="union_main" value="<%= @status.union_main %>">
+            </div>  
+
+            <div class="status">
+              <p>バフ無しのステータス攻撃力の最大値</p>
+              <input class = "state-input" name="status" value="<%= @status.status %>">
+              <p>バフ無しのサブステ</p>
+              <input class = "state-input" name="sub" value="<%= @status.sub %>">
+              <p>バフ無しのダメージ％</p>
+              <input class = "state-input" name="dame" value="<%= @status.dame %>">
+              <p>バフ無しの最終ダメ％</p>
+              <input class = "state-input" name="final_dame" value="<%= @status.final_dame %>">
+              <p>武器補正値</p>
+              <input class = "state-input" name="wepon" value="<%= @status.wepon %>">
+            </div>
+
+            <div class="wepon">
+              <p>武器のメイン潜在のA%orMA%</p>
+              <input class = "state-input" name="wepon_main_per" value="<%= @status.wepon_main_per %>">
+              <p>武器のアディ潜在のA%orMA%</p>
+              <input class = "state-input" name="wepon_add_per" value="<%= @status.wepon_add_per %>">
+            </div>
+
+            <div class="subwepon">  
+              <p>補助武器のメイン潜在のA%orMA%</p>
+              <input class = "state-input" name="addwepon_main_per" value="<%= @status.addwepon_main_per %>">
+              <p>補助武器のアディ潜在のA%orMA%</p>
+              <input class = "state-input" name="addwepon_add_per" value="<%= @status.addwepon_add_per %>">
+            </div>  
+
+            <div class="emb">
+              <p>エンブレムのメイン潜在のA%orMA%</p>
+              <input class = "state-input" name="em_main_per" value="<%= @status.em_main_per %>">
+              <p>エンブレムのアディ潜在のA%orMA%</p>
+              <input class = "state-input" name="em_add_per" value="<%= @status.em_add_per %>">
+            </div>
+            
+            <div class="fb">
+              <p>ファミリアバッチのA%orMA%</p>
+              <input class = "state-input" name="fb" value="<%= @status.fb %>">
+            </div>
+
+            <div class="union-sub">  
+              <p>バフ無しの状態でユニオンマスでサブステを４枠埋めた時のサブステ</p>
+              <input class = "state-input" name="union_sub" value="<%= @status.union_sub %>">
+            </div>  
+              <input class= "submit" type="submit" value="変換">
+         </div>      
+      <% end %>
+
+      <p class="output">メインステ換算(出力)</p>
+      <table>
+        <tr>
+           <th>純メインステ+1</th>
+           <td><%= @difference_pure_main %></td>
+        </tr>
+        <tr>
+            <th>不純メインステ+1</th>
+            <td><%= @difference_nopure_main %></td>
+        </tr>
+         <tr>
+           <th>サブステ+1</th>
+           <td><%= @difference_pure_sub %></td>
+        </tr>
+         <tr>
+           <th>メイン％+1</th>
+           <td><%= @difference_main_per  %></td>
+        </tr>
+         <tr>
+           <th>ALL%+1</th>
+           <td><%=@difference_all_per %></td>
+        </tr>
+         <tr>
+           <th>A or MA +1</th>
+           <td><%= @difference_pure_attack %></td>
+        </tr>
+         <tr>
+           <th>A% or MA% +1</th>
+           <td><%= @difference_attack_per %></td>
+        </tr>
+         <tr>
+           <th>サブ%+1</th>
+           <td><%= @difference_sub_per %></td>
+        </tr>
+        <tr>
+           <th>ダメージ%+1</th>
+           <td>< @difference_dame ></td>
+        </tr>
+      </table>
+      </div>
+     </main>
+     <aside></aside>
+  </div>
+
+  <footer>
+     <div class="image">
+    <div>Copyright © ○○○○ All Rights Reserved.</div>
+     </div>
+  </footer>
+</body>
+
+</html>
