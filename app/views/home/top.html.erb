@@ -32,18 +32,18 @@
         <div class= "exchange">
 
             <div class= main-state>
-              <p>メイプルヒーロー無しのメインステータス</p>
+              <p>メインステータス(メイプルヒーロー無し)</p>
               <input class = "state-input" name="main" >
-              <p>メイプルヒーロー有りのメインステータス</p>
+              <p>メインステータス(メイプルヒーロー有り)</p>
               <input class = "state-input" name="mh_main">
-              <p>補正前(AP振った部分)のメインステータス</p>
+              <p>AP振った部分のメインステータス</p>
               <input class = "state-input" name="ap_main">
             </div>
 
             <div class= "symbol">
-              <p>アーケインシンボルでの増加メインステ</p>
+              <p>アーケインシンボルでの合計増加メインステ</p>
               <input class = "state-input" name="arc_main">
-              <p>オーセンティックシンボルでの増加メインステ</p>
+              <p>オーセンティックシンボルでの合計増加メインステ</p>
               <input class = "state-input" name="aut_main">
             </div>
 
@@ -52,7 +52,7 @@
               <input class = "state-input" name="hyper_main">
               <p>インナーアビリティでの増加メインステ</p>
               <input class = "state-input" name="inner_main">
-              <p>ユニオンキャラ効果の補正値（キャラ自体のメインステ増加値</p>
+              <p>ユニオンキャラ効果での合計増加メインステ(枠のメインステ増加ではない)</p>
               <input class = "state-input" name="union_main">
             </div>  
 
@@ -65,7 +65,7 @@
               <input class = "state-input" name="dame">
               <p>バフ無しの最終ダメ％</p>
               <input class = "state-input" name="final_dame">
-              <p>武器補正値</p>
+              <p>武器係数</p>
               <input class = "state-input" name="wepon">
             </div>
 
@@ -112,11 +112,11 @@
       <p class="output">メインステ換算(出力)</p>
       <table>
         <tr>
-           <th>純メインステ+1</th>
+           <th>潜在％乗るメインステ+1</th>
            <td>0</td>
         </tr>
         <tr>
-           <th>不純メインステ+1</th>
+           <th>潜在％乗らないメインステ+1</th>
            <td>0</td>
         </tr>
          <tr>
