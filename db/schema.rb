@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_28_121944) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_03_173508) do
   create_table "statuses", force: :cascade do |t|
     t.integer "main"
     t.datetime "created_at", null: false
@@ -35,6 +35,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_28_121944) do
     t.integer "em_add_per"
     t.integer "fb"
     t.integer "union_sub"
+    t.integer "bossdamage"
+    t.integer "criticaldamage"
+    t.integer "criticalper"
   end
 
 end

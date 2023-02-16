@@ -11,7 +11,7 @@
 
 <body>
   <header>
-     <div class= "header-logo">メイプル</div>
+     <div class= "header-logo">メイプル計算機</div>
      <div class="header-list">
         <ul>
           <li>項目4</li>
@@ -33,72 +33,82 @@
 
             <div class= main-state>
               <p>メインステータス(メイプルヒーロー無し)</p>
-              <input class = "state-input" name="main" >
+              <input class = "state-input" name="main" value="<%= @status.main %>">
               <p>メインステータス(メイプルヒーロー有り)</p>
-              <input class = "state-input" name="mh_main">
+              <input class = "state-input" name="mh_main" value="<%= @status.mh_main %>">
               <p>AP振った部分のメインステータス</p>
-              <input class = "state-input" name="ap_main">
+              <input class = "state-input" name="ap_main" value="<%= @status.ap_main %>">
             </div>
 
             <div class= "symbol">
               <p>アーケインシンボルでの合計増加メインステ</p>
-              <input class = "state-input" name="arc_main">
+              <input class = "state-input" name="arc_main" value="<%= @status.arc_main %>">
               <p>オーセンティックシンボルでの合計増加メインステ</p>
-              <input class = "state-input" name="aut_main">
+              <input class = "state-input" name="aut_main" value="<%= @status.aut_main %>">
             </div>
 
             <div class="other-mainstate">
               <p>ハイパーステータスでの増加メインステ</p>
-              <input class = "state-input" name="hyper_main">
+              <input class = "state-input" name="hyper_main" value="<%= @status.hyper_main %>">
               <p>インナーアビリティでの増加メインステ</p>
-              <input class = "state-input" name="inner_main">
+              <input class = "state-input" name="inner_main" value="<%= @status.inner_main %>">
               <p>ユニオンキャラ効果での合計増加メインステ(枠のメインステ増加ではない)</p>
-              <input class = "state-input" name="union_main">
+              <input class = "state-input" name="union_main" value="<%= @status.union_main %>">
             </div>  
 
             <div class="status">
               <p>バフ無しのステータス攻撃力の最大値</p>
-              <input class = "state-input" name="status">
+              <input class = "state-input" name="status" value="<%= @status.status %>">
               <p>バフ無しのサブステ</p>
-              <input class = "state-input" name="sub">
-              <p>バフ無しのダメージ％</p>
-              <input class = "state-input" name="dame">
+              <input class = "state-input" name="sub" value="<%= @status.sub %>">
+              <p>バフ無しのダメージ％(リンクスキルは付けておく)</p>
+              <input class = "state-input" name="dame" value="<%= @status.dame %>">
+              <p>バフ無しのボスダメージ％(リンクスキルは付けておく,ボス時に使うファミリアを出しておく)</p>
+              <input class = "state-input" name="bossdamage" value="<%= @status.bossdamage %>" >
               <p>バフ無しの最終ダメ％</p>
-              <input class = "state-input" name="final_dame">
+              <input class = "state-input" name="final_dame" value="<%= @status.final_dame %>">
               <p>武器係数</p>
-              <input class = "state-input" name="wepon">
+              <input class = "state-input" name="wepon" value="<%= @status.wepon %>">
             </div>
 
             <div class="wepon">
               <p>武器のメイン潜在のA%orMA%</p>
-              <input class = "state-input" name="wepon_main_per">
+              <input class = "state-input" name="wepon_main_per" value="<%= @status.wepon_main_per %>">
               <p>武器のアディ潜在のA%orMA%</p>
-              <input class = "state-input" name="wepon_add_per">
+              <input class = "state-input" name="wepon_add_per" value="<%= @status.wepon_add_per %>">
             </div>
 
             <div class="subwepon">  
               <p>補助武器のメイン潜在のA%orMA%</p>
-              <input class = "state-input" name="addwepon_main_per">
+              <input class = "state-input" name="addwepon_main_per" value="<%= @status.addwepon_main_per %>">
               <p>補助武器のアディ潜在のA%orMA%</p>
-              <input class = "state-input" name="addwepon_add_per">
+              <input class = "state-input" name="addwepon_add_per" value="<%= @status.addwepon_add_per %>">
             </div>  
 
             <div class="emb">
               <p>エンブレムのメイン潜在のA%orMA%</p>
-              <input class = "state-input" name="em_main_per">
+              <input class = "state-input" name="em_main_per" value="<%= @status.em_main_per %>">
               <p>エンブレムのアディ潜在のA%orMA%</p>
-              <input class = "state-input" name="em_add_per">
+              <input class = "state-input" name="em_add_per" value="<%= @status.em_add_per %>">
             </div>
             
             <div class="fb">
               <p>ファミリアバッチのA%orMA%</p>
-              <input class = "state-input" name="fb">
+              <input class = "state-input" name="fb" value="<%= @status.fb %>">
             </div>
 
             <div class="union-sub">  
               <p>バフ無しの状態でユニオンマスでサブステを４枠埋めた時のサブステ</p>
-              <input class = "state-input" name="union_sub">
+              <input class = "state-input" name="union_sub" value="<%= @status.union_sub %>" %>
             </div>  
+
+            <div class="critical">
+              <p>クリティカル率(リンクスキルは付けておく)</p>
+              <input class = "state-input" name="criticalper" value="<%= @status.criticalper %>">
+              <p>クリティカルダメージ(リンクスキルは付けておく)</p>
+              <input class = "state-input" name="criticaldamage" value="<%= @status.criticaldamage %>">
+            </div>
+
               <input class= "submit" type="submit" value="変換">
          </div>      
       <% end %>
@@ -112,23 +122,23 @@
       <p class="output">メインステ換算(出力)</p>
       <table>
         <tr>
-           <th>潜在％乗るメインステ+1</th>
+           <th>潜在％乗るメインステ +1</th>
            <td>0</td>
         </tr>
         <tr>
-           <th>潜在％乗らないメインステ+1</th>
+           <th>潜在％乗らないメインステ +1</th>
            <td>0</td>
         </tr>
          <tr>
-           <th>サブステ+1</th>
+           <th>サブステ +1</th>
            <td>0</td>
         </tr>
          <tr>
-           <th>メイン％+1</th>
+           <th>メイン％ +1</th>
            <td>0</td>
         </tr>
          <tr>
-           <th>ALL%+1</th>
+           <th>ALL% +1</th>
            <td>0</td>
         </tr>
          <tr>
@@ -140,12 +150,21 @@
            <td>0</td>
         </tr>
          <tr>
-           <th>サブ%+1</th>
+           <th>サブ% +1</th>
            <td>0</td>
         </tr>
         <tr>
-           <th>ダメージ%+1</th>
-           <td>未実装</td>
+           <th>ダメージ% +1 or ボスダメージ% +1</th>
+           <td>0</td>
+        </tr>
+         <tr>
+           <th>クリティカル率% +1</th>
+           <td>0</td>
+        </tr>
+         <tr>
+           <th>クリティカルダメージ% +1</th>
+           <td>0</td>
+        </tr>
         </tr>
       </table>
       </div>

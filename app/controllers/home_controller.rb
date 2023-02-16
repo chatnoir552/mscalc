@@ -66,26 +66,34 @@ class HomeController < ApplicationController
     @pure_sub = pure_sub(@status.sub,@status.union_sub)
     @sub_per = sub_per(@status.sub, @status.union_sub)
 
-    @status_attack = (@status.wepon)*(4*(@pure_main*((100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame)/100.to_f)*((100+@status.final_dame)/100.to_f)
+    @status_attack = (@status.wepon)*(4*(@pure_main*((100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame+@status.bossdamage)/100.to_f)*(1+((35+@status.criticaldamage)/100.to_f)*(@status.criticalper/100.to_f))*((100+@status.final_dame)/100.to_f)
 
 
-    @add_pure_main = (@status.wepon)*(4*((@pure_main+1)*((100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame)/100.to_f)*((100+@status.final_dame)/100.to_f)
+    @add_pure_main = (@status.wepon)*(4*((@pure_main+1)*((100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame+@status.bossdamage)/100.to_f)*(1+((35+@status.criticaldamage)/100.to_f)*(@status.criticalper/100.to_f))*((100+@status.final_dame)/100.to_f)
 
-    @add_nopure_main = (@status.wepon)*(4*(@pure_main*((100+@main_per)/100.to_f) + @nopure_main + 1) + (@pure_sub*((100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame)/100.to_f)*((100+@status.final_dame)/100.to_f)
+    @add_nopure_main = (@status.wepon)*(4*(@pure_main*((100+@main_per)/100.to_f) + @nopure_main + 1) + (@pure_sub*((100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame+@status.bossdamage)/100.to_f)*(1+((35+@status.criticaldamage)/100.to_f)*(@status.criticalper/100.to_f))*((100+@status.final_dame)/100.to_f)
 
-    @add_main_per = (@status.wepon)*(4*(@pure_main*((1+100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame)/100.to_f)*((100+@status.final_dame)/100.to_f)
+    @add_main_per = (@status.wepon)*(4*(@pure_main*((1+100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame+@status.bossdamage)/100.to_f)*(1+((35+@status.criticaldamage)/100.to_f)*(@status.criticalper/100.to_f))*((100+@status.final_dame)/100.to_f)
 
-    @add_pure_sub = (@status.wepon)*(4*(@pure_main*((100+@main_per)/100.to_f) + @nopure_main) + ((1+@pure_sub)*((100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame)/100.to_f)*((100+@status.final_dame)/100.to_f)
+    @add_pure_sub = (@status.wepon)*(4*(@pure_main*((100+@main_per)/100.to_f) + @nopure_main) + ((1+@pure_sub)*((100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame+@status.bossdamage)/100.to_f)*(1+((35+@status.criticaldamage)/100.to_f)*(@status.criticalper/100.to_f))*((100+@status.final_dame)/100.to_f)
 
-    @add_sub_per = (@status.wepon)*(4*(@pure_main*((100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((1+100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame)/100.to_f)*((100+@status.final_dame)/100.to_f)
+    @add_sub_per = (@status.wepon)*(4*(@pure_main*((100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((1+100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame+@status.bossdamage)/100.to_f)*(1+((35+@status.criticaldamage)/100.to_f)*(@status.criticalper/100.to_f))*((100+@status.final_dame)/100.to_f)
 
-    @add_all_per = (@status.wepon)*(4*(@pure_main*((1+100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((1+100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame)/100.to_f)*((100+@status.final_dame)/100.to_f)
+    @add_all_per = (@status.wepon)*(4*(@pure_main*((1+100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((1+100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame+@status.bossdamage)/100.to_f)*(1+((35+@status.criticaldamage)/100.to_f)*(@status.criticalper/100.to_f))*((100+@status.final_dame)/100.to_f)
 
-    @add_pure_attack = (@status.wepon)*(4*(@pure_main*((100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((100+@sub_per)/100.to_f)))*(((1+@pure_attack)*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame)/100.to_f)*((100+@status.final_dame)/100.to_f)
+    @add_pure_attack = (@status.wepon)*(4*(@pure_main*((100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((100+@sub_per)/100.to_f)))*(((1+@pure_attack)*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame+@status.bossdamage)/100.to_f)*(1+((35+@status.criticaldamage)/100.to_f)*(@status.criticalper/100.to_f))*((100+@status.final_dame)/100.to_f)
 
-    @add_attack_per = (@status.wepon)*(4*(@pure_main*((100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((100+@sub_per)/100.to_f)))*((@pure_attack*((1+100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame)/100.to_f)*((100+@status.final_dame)/100.to_f)
+    @add_attack_per = (@status.wepon)*(4*(@pure_main*((100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((100+@sub_per)/100.to_f)))*((@pure_attack*((1+100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame+@status.bossdamage)/100.to_f)*(1+((35+@status.criticaldamage)/100.to_f)*(@status.criticalper/100.to_f))*((100+@status.final_dame)/100.to_f)
 
-    @add_dame = (@status.wepon)*(4*(@pure_main*((100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((1+100+@status.dame)/100.to_f)*((100+@status.final_dame)/100.to_f)
+    @add_dame = (@status.wepon)*(4*(@pure_main*((100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((1+100+@status.dame+@status.bossdamage)/100.to_f)*(1+((35+@status.criticaldamage)/100.to_f)*(@status.criticalper/100.to_f))*((100+@status.final_dame)/100.to_f)
+
+    @add_criticaldamage = (@status.wepon)*(4*(@pure_main*((100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame+@status.bossdamage)/100.to_f)*(1+((1+35+@status.criticaldamage)/100.to_f)*(@status.criticalper/100.to_f))*((100+@status.final_dame)/100.to_f)
+
+    if @status.criticalper < 100
+      @add_criticalper = (@status.wepon)*(4*(@pure_main*((100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame+@status.bossdamage)/100.to_f)*(1+((35+@status.criticaldamage)/100.to_f)*((1+@status.criticalper)/100.to_f))*((100+@status.final_dame)/100.to_f)
+    else
+      @add_criticalper = (@status.wepon)*(4*(@pure_main*((100+@main_per)/100.to_f) + @nopure_main) + (@pure_sub*((100+@sub_per)/100.to_f)))*((@pure_attack*((100+@attack_per)/100.to_f))/100.to_f)*((100+@status.dame+@status.bossdamage)/100.to_f)*(1+((35+@status.criticaldamage)/100.to_f)*(@status.criticalper/100.to_f))*((100+@status.final_dame)/100.to_f)
+    end  
 
 
     @difference_pure_main = (difference_status(@status_attack,@add_pure_main,@add_pure_main-@status_attack)).round(2)
@@ -97,6 +105,8 @@ class HomeController < ApplicationController
     @difference_pure_attack = (difference_status(@status_attack,@add_pure_attack,@add_pure_main-@status_attack)).round(2)
     @difference_attack_per = (difference_status(@status_attack,@add_attack_per,@add_pure_main-@status_attack)).round(2)
     @difference_dame = (difference_status(@status_attack,@add_dame,@add_pure_main-@status_attack)).round(2)
+    @difference_criticaldamage = (difference_status(@status_attack,@add_criticaldamage,@add_pure_main-@status_attack)).round(2)
+    @difference_criticalper = (difference_status(@status_attack,@add_criticalper,@add_pure_main-@status_attack)).round(2)
 
   end
 
@@ -122,13 +132,15 @@ class HomeController < ApplicationController
       em_main_per: params[:em_main_per],
       em_add_per: params[:em_add_per],
       fb: params[:fb],
-      union_sub: params[:union_sub]
+      union_sub: params[:union_sub],
+      bossdamage: params[:bossdamage],
+      criticaldamage: params[:criticaldamage],
+      criticalper: params[:criticalper]
     )
     if @status.save
        redirect_to("/#{@status.id}")
     else
-       render ("home/top")
-
+      render :top, status: :unprocessable_entity
     end
   end
 end

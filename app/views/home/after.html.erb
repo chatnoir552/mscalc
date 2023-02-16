@@ -61,8 +61,10 @@
               <input class = "state-input" name="status" value="<%= @status.status %>">
               <p>バフ無しのサブステ</p>
               <input class = "state-input" name="sub" value="<%= @status.sub %>">
-              <p>バフ無しのダメージ％</p>
+              <p>バフ無しのダメージ％(リンクスキルは付けておく)</p>
               <input class = "state-input" name="dame" value="<%= @status.dame %>">
+              <p>バフ無しのボスダメージ％(リンクスキルは付けておく,ボス時に使うファミリアを出しておく)</p>
+              <input class = "state-input" name="bossdamage" value="<%= @status.bossdamage %>" >
               <p>バフ無しの最終ダメ％</p>
               <input class = "state-input" name="final_dame" value="<%= @status.final_dame %>">
               <p>武器係数</p>
@@ -98,7 +100,15 @@
             <div class="union-sub">  
               <p>バフ無しの状態でユニオンマスでサブステを４枠埋めた時のサブステ</p>
               <input class = "state-input" name="union_sub" value="<%= @status.union_sub %>">
+            </div>
+
+            <div class="critical">
+              <p>クリティカル率(リンクスキルは付けておく)</p>
+              <input class = "state-input" name="criticalper" value="<%= @status.criticalper %>">
+              <p>クリティカルダメージ(リンクスキルは付けておく)</p>
+              <input class = "state-input" name="criticaldamage" value="<%= @status.criticaldamage %>">
             </div>  
+
               <input class= "submit" type="submit" value="変換">
          </div>      
       <% end %>
@@ -106,23 +116,23 @@
       <p class="output">メインステ換算(出力)</p>
       <table>
         <tr>
-           <th>潜在％乗るメインステ+1</th>
+           <th>潜在％乗るメインステ +1</th>
            <td><%= @difference_pure_main %></td>
         </tr>
         <tr>
-            <th>潜在％乗らないメインステ+1</th>
+            <th>潜在％乗らないメインステ +1</th>
             <td><%= @difference_nopure_main %></td>
         </tr>
          <tr>
-           <th>サブステ+1</th>
+           <th>サブステ +1</th>
            <td><%= @difference_pure_sub %></td>
         </tr>
          <tr>
-           <th>メイン％+1</th>
+           <th>メイン％ +1</th>
            <td><%= @difference_main_per  %></td>
         </tr>
          <tr>
-           <th>ALL%+1</th>
+           <th>ALL% +1</th>
            <td><%=@difference_all_per %></td>
         </tr>
          <tr>
@@ -134,12 +144,20 @@
            <td><%= @difference_attack_per %></td>
         </tr>
          <tr>
-           <th>サブ%+1</th>
+           <th>サブ% +1</th>
            <td><%= @difference_sub_per %></td>
         </tr>
         <tr>
-           <th>ダメージ%+1</th>
-           <td>未実装</td>
+           <th>ダメージ% +1 or ボスダメージ% +1</th>
+           <td><%= @difference_dame %></td>
+        </tr>
+        <tr>
+           <th>クリティカル率% +1</th>
+           <td><%= @difference_criticalper %></td>
+        </tr>
+        <tr>     
+           <th>クリティカルダメージ% +1</th>
+           <td><%= @difference_criticaldamage %></td>
         </tr>
       </table>
       </div>

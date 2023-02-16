@@ -20,5 +20,8 @@ class Status < ApplicationRecord
     validates :em_add_per, {presence: true, length: {maximum: 15}, numericality: {only_integer: true} }
     validates :fb, {presence: true, length: {maximum: 15}, numericality: {only_integer: true} }
     validates :union_sub, {presence: true, length: {maximum: 15}, numericality: {only_integer: true} }
+    validates :bossdamage, {presence: true, length: {maximum: 15}, numericality: {only_integer: true} }
+    validates :criticaldamage, {presence: true, length: {maximum: 15}, numericality: {only_integer: true} }
+    validates :criticalper, {presence: true, length: {maximum: 15}, numericality: {only_integer: true} }
 
 end

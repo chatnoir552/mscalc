@@ -180,8 +180,17 @@ footer {
     width:400px;
     border-color: black;
     border-radius: 10px;
-    
+    margin-bottom: 70px;
 
+}
+
+.critical{
+    border: solid 1px;
+    padding-bottom: 20px;
+    width:400px;
+    border-color: black;
+    border-radius: 10px;
+    
 }
 
 .submit{
